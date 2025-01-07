@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ9vM5wR5cGFyQXXROy2tiY4EfhwA+VnsPflmVEfnT2zz1JWyJoF27d4rGQU" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        .container {
+            max-width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #45a049;
+            transition: background-color 0.3s;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-link {
+            font-size: 1rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .form-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                {{ form.username(class="form-control", placeholder="Enter your username") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                {{ form.email(class="form-control", placeholder="Enter your email") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                {{ form.password(class="form-control", placeholder="Enter your password") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Confirm Password</label>
+                {{ form.confirm_password(class="form-control", placeholder="Confirm your password") }}
+            </div>
+
+            <div class="mb-3 text-center">
+                {{ form.submit(class="btn btn-custom") }}
+            </div>
+
+            <div class="text-center">
+                <a href="{{ url_for('login') }}" class="form-link">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (Popper and Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb2tT3Qpt4WgBzP28l6Gfi49dxA1N5GGRZ0HrbBrfPZsXxBv3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0zV5x5sBqugqYpPB1ClwTSMIv2deGmH8j50a2kzWfBntA0c6" crossorigin="anonymous"></script>
+</body>
+</html>
