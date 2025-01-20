@@ -13,7 +13,7 @@ username = os.environ.get('DB_USERNAME')
 password = os.environ.get('DB_PASSWORD')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql+psycopg2://{username}:{password}@localhost/do_i_need_a_doctor?client_encoding=UTF8' #connect our app file to our database
-app.config['SECRET_KEY'] = 'mysecretkey' # Secret key to secure the session cookie
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') # Secret key to secure the session cookie
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)  # Set session timeout to 30 minutes
 app.config['SESSION_COOKIE_SECURE'] = True  # Secure cookies (ensure HTTPS)
 
