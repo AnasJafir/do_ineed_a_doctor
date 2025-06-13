@@ -158,8 +158,19 @@ export function SymptomChecker() {
           translations={currentTranslations}
         />
       </main>
-      <footer className="text-center py-4 text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} {currentTranslations.appName}. All rights reserved.
+      <footer className="text-center py-4 text-sm text-muted-foreground border-t">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-2">
+          <a href="/privacy" className="hover:text-primary">Privacy Policy</a>
+          <span>•</span>
+          <a href="/terms" className="hover:text-primary">Terms of Service</a>
+          <span>•</span>
+          <a href="/about" className="hover:text-primary">About</a>
+          <span>•</span>
+          <a href="/contact" className="hover:text-primary">Contact</a>
+          </div>
+          <p>&copy; {new Date().getFullYear()} {currentTranslations.appName}. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
